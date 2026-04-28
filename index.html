@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nancy Patel | Developer Portfolio</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+            header h1 {
+                margin: 0;
+                font-size: 40px;
+            }
+
+            header p {
+                font-size: 18px;
+                margin-top: 10px;
+            }
+
+        nav {
+            background: #1e293b;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px;
+        }
+
+            nav a {
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+                nav a:hover {
+                    color: #38bdf8;
+                }
+
+        section {
+            max-width: 1000px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+            .card h3 {
+                margin-top: 0;
+            }
+
+        .skills ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills li {
+            background: #e2e8f0;
+            padding: 10px 15px;
+            border-radius: 6px;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        button {
+            background: #38bdf8;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            color: white;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background: #0284c7;
+            }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Nancy Patel</h1>
+
+        <p>Full Stack Developer | Angular + .NET</p>
+
+        <p>Building dashboards, IoT systems, and modern web applications</p>
+
+        <button onclick="window.open('resume.pdf')">Download Resume</button>
+
+    </header>
+
+    <nav>
+
+        <a href="#about">About</a>
+
+        <a href="#projects">Projects</a>
+
+        <a href="#skills">Skills</a>
+
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+    <section id="about">
+
+        <h2>About Me</h2>
+
+        <p>
+            Computer Engineering graduate with experience in developing
+            full stack applications using Angular and .NET.
+            Skilled in building dashboards, real-time monitoring systems,
+            and data-driven applications.
+        </p>
+
+    </section>
+
+    <section id="projects">
+
+        <h2>Projects</h2>
+
+        <div class="projects">
+
+
+
+            <div class="card">
+
+                <h3>HitAlert � Smart Accident Detection System</h3>
+
+                <p>
+                    IoT-based accident detection system using Arduino and NodeMCU
+                    to identify collisions, gas leaks, and fire hazards.
+                </p>
+
+                <p><strong>Tech Stack:</strong> Arduino, NodeMCU, APIs, Flutter</p>
+
+
+
+            </div>
+
+            <div class="card">
+
+                <h3>Liquiloan</h3>
+
+                <p>
+                    Developed a full stack clone of the  company website
+                    during my internship. The application includes dynamic UI,
+                    API integration, and database connectivity.
+                </p>
+
+                <p><strong>Tech Stack:</strong> Angular, .NET, SQL Server</p>
+
+
+
+            </div>
+
+            <div class="card">
+
+                <h3>Crafted Treasures � E-Commerce Website</h3>
+
+                <p>
+                    Developed an e-commerce platform for handcrafted products with
+                    product listing and responsive UI and Admin side for managing products, orders, and users.
+                </p>
+
+                <p><strong>Tech Stack:</strong> Angular, .NET, SQL Server</p>
+
+
+
+            </div>
+
+            <div class="card">
+
+                <h3>Health Care Activity Dashboard</h3>
+
+                <p>
+                    Designed an interactive healthcare dashboard to visualize
+                    activity metrics and generate insights from processed datasets.
+                </p>
+
+                <p><strong>Tech Stack:</strong> Tableau, Data Analytics</p>
+
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="skills" class="skills">
+
+        <h2>Technical Skills</h2>
+
+        <ul>
+
+            <li>Angular</li>
+
+            <li>.NET</li>
+
+            <li>JavaScript</li>
+
+            <li>SQL</li>
+
+            <li>MySQL</li>
+
+            <li>API Development</li>
+
+            <li>Power BI</li>
+
+            <li>Tableau</li>
+
+            <li>Arduino</li>
+
+            <li>NodeMCU</li>
+
+        </ul>
+
+    </section>
+
+    <section id="contact" class="contact">
+
+        <h2>Contact</h2>
+
+        <p>Email: nancysankhla2004@gmail.com</p>
+
+        <p>Phone: +91 9313465778</p>
+
+        <p>
+            GitHub:
+            <a href="https://github.com/PATELNANCY-dot">https://github.com/PATELNANCY-dot</a>
+        </p>
+
+        <p>
+            LinkedIn:
+            <a href="https://www.linkedin.com/in/nancy-patel-8a9459282">https://www.linkedin.com/in/nancy-patel-8a9459282</a>
+        </p>
+
+    </section>
+
+    <footer>
+
+        <p>� 2026 Nancy Patel</p>
+
+    </footer>
+
+</body>
+</html>
