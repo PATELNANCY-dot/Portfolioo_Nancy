@@ -1,324 +1,662 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Nancy Patel | Developer Portfolio</title>
+    <title>Nancy Patel | Full Stack Developer</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
 
-        body {
-            font-family: Arial, sans-serif;
+        :root {
+            --bg: #0f172a;
+            --card: rgba(255,255,255,0.05);
+            --primary: #8b5cf6;
+            --secondary: #06b6d4;
+            --text: #f8fafc;
+            --muted: #94a3b8;
+            --border: rgba(255,255,255,0.08);
+        }
+
+        * {
             margin: 0;
-            background: #f5f5f5;
-            color: #333;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        header {
-            background: #0f172a;
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
+        html {
+            scroll-behavior: smooth;
         }
 
-            header h1 {
-                margin: 0;
-                font-size: 40px;
-            }
+        body {
+            font-family: 'Poppins',sans-serif;
+            color: var(--text);
+            background: radial-gradient(circle at top left,#312e81,transparent 25%), radial-gradient(circle at bottom right,#0f766e,transparent 25%), var(--bg);
+            line-height: 1.7;
+        }
 
-            header p {
-                font-size: 18px;
-                margin-top: 10px;
-            }
+        /* NAVBAR */
 
         nav {
-            background: #1e293b;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
             display: flex;
             justify-content: center;
-            gap: 30px;
-            padding: 15px;
+            gap: 40px;
+            padding: 20px;
+            background: rgba(15,23,42,0.7);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
         }
 
             nav a {
-                color: white;
+                color: var(--text);
                 text-decoration: none;
-                font-weight: bold;
+                font-weight: 500;
+                transition: 0.3s;
             }
 
                 nav a:hover {
-                    color: #38bdf8;
+                    color: var(--secondary);
                 }
 
-        section {
-            max-width: 1000px;
-            margin: auto;
-            padding: 60px 20px;
+        /* HERO */
+
+        header {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
         }
 
-        h2 {
-            text-align: center;
-            margin-bottom: 40px;
+        .hero {
+            max-width: 950px;
         }
+
+        .tagline {
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid var(--border);
+            margin-bottom: 25px;
+            color: var(--secondary);
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        .highlight {
+            color: var(--secondary);
+        }
+
+        .hero p {
+            max-width: 760px;
+            margin: auto;
+            font-size: 18px;
+            color: var(--muted);
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background: linear-gradient(135deg,var(--primary),var(--secondary));
+            color: white;
+        }
+
+        .secondary-btn {
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,0.05);
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+        }
+
+        /* SECTION */
+
+        section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 100px 20px;
+        }
+
+            section h2 {
+                text-align: center;
+                font-size: 42px;
+                margin-bottom: 50px;
+            }
+
+        /* ABOUT */
+
+        .about {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+            .about p {
+                color: var(--muted);
+                font-size: 18px;
+            }
+
+        /* PROJECTS */
 
         .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+            gap: 30px;
         }
 
         .card {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: 0.4s;
+            backdrop-filter: blur(14px);
+            /* ADD THIS */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-            .card h3 {
-                margin-top: 0;
+            .card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 40px rgba(0,0,0,0.3);
             }
 
-        .skills ul {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-            list-style: none;
-            padding: 0;
+            .card img {
+                width: 80%;
+                height: 220px;
+                object-fit: contain;
+                /* CENTER IMAGE */
+                display: block;
+                margin: 20px auto 0;
+            }
+
+        .card-content {
+            padding: 25px;
+            width: 100%;
         }
 
-        .skills li {
-            background: #e2e8f0;
-            padding: 10px 15px;
-            border-radius: 6px;
+        .card h3 {
+            margin-bottom: 15px;
         }
+
+        .card p {
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+            .badges span {
+                background: rgba(255,255,255,0.06);
+                border: 1px solid var(--border);
+                color: var(--secondary);
+                padding: 8px 14px;
+                border-radius: 999px;
+                font-size: 13px;
+            }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+
+            .project-links a {
+                text-decoration: none;
+                color: white;
+                font-size: 14px;
+            }
+
+                .project-links a:hover {
+                    color: var(--secondary);
+                }
+
+        /* SKILLS */
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .skill {
+            padding: 14px 22px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            color: var(--secondary);
+        }
+
+        /* CONTACT */
 
         .contact {
             text-align: center;
         }
 
-        footer {
-            background: #0f172a;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        button {
-            background: #38bdf8;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            color: white;
-            cursor: pointer;
-        }
-
-            button:hover {
-                background: #0284c7;
+            .contact p {
+                margin: 15px 0;
+                color: var(--muted);
             }
+
+            .contact a {
+                color: var(--secondary);
+                text-decoration: none;
+            }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+        }
+
+        /* MOBILE */
+
+        @media(max-width:768px) {
+
+            nav {
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero h2 {
+                font-size: 24px;
+            }
+
+            section h2 {
+                font-size: 34px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
+    <!-- NAVBAR -->
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- HERO -->
+
     <header>
 
-        <h1>Nancy Patel</h1>
+        <div class="hero">
 
-        <p>Full Stack Developer | Angular + .NET</p>
+            <div class="tagline">
+                Data Analytics • Frontend Development • Backend Development • QA Testing
+            </div>
 
-        <p>Building dashboards, IoT systems, and modern web applications</p>
+            <h1>Nancy Patel</h1>
 
-        <button onclick="window.open('resume.pdf')">Download Resume</button>
+            <h2>
+                Building modern web applications with
+                <span class="highlight">.NET</span>,
+                <span class="highlight">Angular</span>,
+                and
+                <span class="highlight">Data Analytics</span>
+            </h2>
+
+            <p>
+                Full Stack Developer focused on building responsive web applications,
+                backend APIs, dashboard systems, and data-driven solutions using
+                ASP.NET Core, Angular, SQL Server, Tableau, and modern frontend technologies.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="resume.pdf" class="btn primary-btn">
+                    Download Resume
+                </a>
+
+                <a href="https://github.com/PATELNANCY-dot" target="_blank" class="btn secondary-btn">
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
 
     </header>
 
-    <nav>
-
-        <a href="#about">About</a>
-
-        <a href="#projects">Projects</a>
-
-        <a href="#skills">Skills</a>
-
-        <a href="#contact">Contact</a>
-
-    </nav>
+    <!-- ABOUT -->
 
     <section id="about">
 
         <h2>About Me</h2>
 
-        <p>
-            Computer Engineering graduate with experience in developing
-            full stack applications using Angular and .NET.
-            Skilled in building dashboards, real-time monitoring systems,
-            and data-driven applications.
-        </p>
+        <div class="about">
 
-    </section>
+            <p>
+                I am a Full Stack Developer with experience in developing
+                scalable web applications, REST APIs, dashboards,
+                and database-driven systems.
 
-    <section id="projects">
+                I enjoy working on backend architecture, frontend UI development,
+                and analytics solutions using Angular, ASP.NET Core,
+                SQL Server, Tableau, and Power BI.
 
-        <h2>Projects</h2>
-
-        <div class="projects ">
-
-
-
-            <div class="card">
-
-                <h3>HitAlert � Smart Accident Detection System</h3>
-
-                <p>
-                    IoT-based accident detection system using Arduino and NodeMCU
-                    to identify collisions, gas leaks, and fire hazards.
-                </p>
-
-                <p><strong>Tech Stack:</strong> Arduino, NodeMCU, APIs, Flutter</p>
-
-
-
-            </div>
-
-            <div class="card">
-
-                <h3>Liquiloan � P2P Lending Platform</h3>
-
-                <p>
-                    Developed a full stack clone of the  company website
-                    during my internship. The application includes dynamic UI,
-                    API integration, and database connectivity.
-                </p>
-
-                <p><strong>Tech Stack:</strong> Angular, .NET Core Web API, SQL Server</p>
-
-
-
-            </div>
-
-            <div class="card">
-
-                <h3>Crafted Treasures � E-Commerce Website</h3>
-
-                <p>
-                    Developed an e-commerce platform for handcrafted products with
-                    product listing and responsive UI and Admin side for managing products, orders, and users.
-                </p>
-
-                <p><strong>Tech Stack:</strong> Angular, .NET Core Web API, SQL Server</p>
-
-
-
-            </div>
-
-            <div class="card">
-
-                <h3>Expense Tracker � Expense Book Application</h3>
-
-                <p>
-                    Built a full-stack expense tracking system to manage income, expenses, and financial balance.
-                    Includes authentication, dashboard analytics, profile management, and dark mode support.
-                    Integrated with Angular frontend for real-time user interaction.
-                </p>
-
-                <p><strong>Tech Stack:</strong> Angular, .NET Core Web API, SQL Server</p>
-
-            </div>
-
-            <div class="card">
-
-                <h3>Health Care Activity Dashboard</h3>
-
-                <p>
-                    Designed an interactive healthcare dashboard to visualize
-                    activity metrics and generate insights from processed datasets.
-                </p>
-                <a href="https://public.tableau.com/app/profile/patel.nancy5530/viz/HealthcareActivityMonitor/Dashboard13" target="_blank">
-                    🔗 View Dashboard
-                </a>
-                <p><strong>Tech Stack:</strong> Tableau, Data Analytics</p>
-
-
-
-            </div>
-
-            <div class="card">
-
-                <h3>Seasonal Crop Monitoring</h3>
-
-                <p>
-                    Designed and implemented an interactive Seasonal Crop Monitoring dashboard that analyzes seasonal crop data and visualizes key performance indicators.
-                </p>
-                <a href="https://public.tableau.com/app/profile/patel.nancy5530/viz/SeasonalCropMonitoring/Dashboard1" target="_blank">
-                    🔗 View Dashboard
-                </a>
-
-                <p><strong>Tech Stack:</strong> Tableau, Data Analytics</p>
-
-
-
-            </div>
-
+                Along with development, I also have exposure to testing,
+                debugging, API validation, and application quality improvement.
+            </p>
 
         </div>
 
     </section>
 
-    <section id="skills" class="skills">
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <h2>Projects</h2>
+
+        <div class="projects">
+
+            <!-- PROJECT 1 -->
+
+            <div class="card">
+
+                <img src="L.PNG" alt="Liquiloan Project">
+
+                <div class="card-content">
+
+                    <h3>Liquiloan Platform</h3>
+
+                    <p>
+                        Full-stack lending platform with authentication,
+                        API integration, profile management,
+                        and responsive dashboard UI.
+                    </p>
+
+                    <div class="badges">
+                        <span>Angular</span>
+                        <span>.NET Core</span>
+                        <span>SQL Server</span>
+                        <span>JWT</span>
+                    </div>
+
+                    <div class="project-links">
+                       
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 2 -->
+
+            <div class="card">
+
+                <img src="ExpenceBook.svg" alt="Expense Tracker">
+
+                <div class="card-content">
+
+                    <h3>Expense Tracker</h3>
+
+                    <p>
+                        Expense tracking application with dashboard analytics,
+                        authentication, profile management,
+                        and responsive UI support.
+                    </p>
+
+                    <div class="badges">
+                        <span>Angular</span>
+                        <span>.NET API</span>
+                        <span>SQL Server</span>
+                        <span>Dashboard</span>
+                    </div>
+
+                    <div class="project-links">
+                        <!--<a href="#">Live Demo</a>
+                        <a href="#">GitHub</a>-->
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 3 -->
+
+            <div class="card">
+
+                <img src="Crafted.png" alt="Crafted Treasures">
+
+                <div class="card-content">
+
+                    <h3>Crafted Treasures</h3>
+
+                    <p>
+                        E-commerce platform for handcrafted products with
+                        product management, admin features,
+                        and responsive shopping experience.
+                    </p>
+
+                    <div class="badges">
+                        <span>Angular</span>
+                        <span>.NET Core</span>
+                        <span>SQL Server</span>
+                        <span>E-Commerce</span>
+                    </div>
+
+                    <div class="project-links">
+                        
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 4 -->
+
+            <div class="card">
+
+                <img src="HitAlert.jpg" alt="HitAlert">
+
+                <div class="card-content">
+
+                    <h3>HitAlert Smart Detection System</h3>
+
+                    <p>
+                        IoT-based accident detection and emergency alert system
+                        using sensors, NodeMCU,
+                        and real-time API communication.
+                    </p>
+
+                    <div class="badges">
+                        <span>Arduino</span>
+                        <span>NodeMCU</span>
+                        <span>Flutter</span>
+                        <span>IoT</span>
+                    </div>
+
+                    <div class="project-links">
+                        
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 5 -->
+
+            <div class="card">
+
+                <img src="healthcare.png" alt="Healthcare Dashboard">
+
+                <div class="card-content">
+
+                    <h3>Healthcare Activity Dashboard</h3>
+
+                    <p>
+                        Interactive healthcare analytics dashboard
+                        designed to visualize activity metrics
+                        and generate meaningful insights from datasets.
+                    </p>
+
+                    <div class="badges">
+                        <span>Tableau</span>
+                        <span>Analytics</span>
+                        <span>Dashboard</span>
+                        <span>Data Visualization</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://public.tableau.com/app/profile/patel.nancy5530/viz/HealthcareActivityMonitor/Dashboard13" target="_blank">View Dashboard</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 6 -->
+
+            <div class="card">
+
+                <img src="cropfarming.png" alt="Crop Dashboard">
+
+                <div class="card-content">
+
+                    <h3>Seasonal Crop Monitoring</h3>
+
+                    <p>
+                        Data analytics dashboard for seasonal crop monitoring,
+                        KPI tracking, and agricultural performance visualization.
+                    </p>
+
+                    <div class="badges">
+                        <span>Tableau</span>
+                        <span>Analytics</span>
+                        <span>KPI Tracking</span>
+                        <span>Visualization</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://public.tableau.com/app/profile/patel.nancy5530/viz/SeasonalCropMonitoring/Dashboard1" target="_blank">View Dashboard</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SKILLS -->
+
+    <section id="skills">
 
         <h2>Technical Skills</h2>
 
-        <ul>
+        <div class="skills-container">
 
-            <li>Angular</li>
+            <div class="skill">Angular</div>
+            <div class="skill">ASP.NET Core</div>
+            <div class="skill">C#</div>
+            <div class="skill">SQL Server</div>
+            <div class="skill">REST APIs</div>
+            <div class="skill">Entity Framework</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">HTML & CSS</div>
+            <div class="skill">Tableau</div>
+            <div class="skill">Power BI</div>
+            <div class="skill">Git & GitHub</div>
+            <div class="skill">Postman</div>
 
-            <li>.NET</li>
-
-            <li>JavaScript</li>
-
-            <li>SQL</li>
-
-            <li>MySQL</li>
-
-            <li>API Development</li>
-
-            <li>Power BI</li>
-
-            <li>Tableau</li>
-
-            <li>Arduino</li>
-
-            <li>NodeMCU</li>
-
-        </ul>
+        </div>
 
     </section>
 
-    <section id="contact" class="contact">
+    <!-- CONTACT -->
+
+    <section id="contact">
 
         <h2>Contact</h2>
 
-        <p>Email: nancysankhla2004@gmail.com</p>
+        <div class="contact">
 
-        <p>Phone: +91 9313465778</p>
+            <p>
+                Email:
+                <a href="mailto:nancysankhla2004@gmail.com">
+                    nancysankhla2004@gmail.com
+                </a>
+            </p>
 
-        <p>
-            GitHub:
-            <a href="https://github.com/PATELNANCY-dot" target="_blank">https://github.com/PATELNANCY-dot</a>
-        </p>
+            <p>
+                GitHub:
+                <a href="https://github.com/PATELNANCY-dot" target="_blank">
+                    github.com/PATELNANCY-dot
+                </a>
+            </p>
 
-        <p>
-            LinkedIn:
-            <a href="https://www.linkedin.com/in/nancy-patel-8a9459282" target="_blank">https://www.linkedin.com/in/nancy-patel-8a9459282</a>
-        </p>
+            <p>
+                LinkedIn:
+                <a href="https://www.linkedin.com/in/nancy-patel-8a9459282" target="_blank">
+                    linkedin.com/in/nancy-patel
+                </a>
+            </p>
+
+        </div>
 
     </section>
 
+    <!-- FOOTER -->
+
     <footer>
-
-        <p>� 2026 Nancy Patel</p>
-
+        © 2026 Nancy Patel • Full Stack Developer
     </footer>
 
 </body>
