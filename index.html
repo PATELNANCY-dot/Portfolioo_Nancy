@@ -468,35 +468,31 @@
 
     <div class="custom-cursor"></div>
 
-
     <script>
+        document.addEventListener("DOMContentLoaded", () => {
 
-const cursor = document.querySelector(".custom-cursor");
+            const cursor = document.querySelector(".custom-cursor");
 
-/* Cursor Movement */
-document.addEventListener("mousemove", (e) => {
+            /* Cursor Movement */
+            document.addEventListener("mousemove", (e) => {
+                cursor.style.left = e.clientX + "px";
+                cursor.style.top = e.clientY + "px";
+            });
 
-    cursor.style.left = e.clientX + "px";
-    cursor.style.top = e.clientY + "px";
+            /* Hover Animation */
+            const hoverItems = document.querySelectorAll("a, button, .card");
 
-});
+            hoverItems.forEach((item) => {
+                item.addEventListener("mouseenter", () => {
+                    cursor.classList.add("hover");
+                });
 
-/* Hover Animation */
+                item.addEventListener("mouseleave", () => {
+                    cursor.classList.remove("hover");
+                });
+            });
 
-const hoverItems = document.querySelectorAll("a, button, .card");
-
-hoverItems.forEach((item) => {
-
-    item.addEventListener("mouseenter", () => {
-        cursor.classList.add("hover");
-    });
-
-    item.addEventListener("mouseleave", () => {
-        cursor.classList.remove("hover");
-    });
-
-});
-
+        });
     </script>
 </body>
 </html>
