@@ -467,20 +467,22 @@
 
 
     <div class="custom-cursor"></div>
-
     <script>
         document.addEventListener("DOMContentLoaded", () => {
 
             const cursor = document.querySelector(".custom-cursor");
 
-            /* Cursor Movement */
+            // safety check (VERY IMPORTANT for GitHub)
+            if (!cursor) return;
+
             document.addEventListener("mousemove", (e) => {
                 cursor.style.left = e.clientX + "px";
                 cursor.style.top = e.clientY + "px";
             });
 
-            /* Hover Animation */
-            const hoverItems = document.querySelectorAll("a, button, .card");
+            const hoverItems = document.querySelectorAll(
+                "a, button, .card, .skill, .badges span, .contact-card"
+            );
 
             hoverItems.forEach((item) => {
                 item.addEventListener("mouseenter", () => {
