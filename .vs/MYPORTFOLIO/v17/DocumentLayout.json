@@ -18,12 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:14:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -44,10 +40,18 @@
               "RelativeDocumentMoniker": "index.html",
               "ToolTip": "C:\\Users\\pcit104\\Desktop\\MYPORTFOLIO\\index.html",
               "RelativeToolTip": "index.html",
-              "ViewState": "AgIAAAYEAAAAAAAAAAAYwCwEAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2026-05-06T05:41:01.851Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:14:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             }
           ]
         }
