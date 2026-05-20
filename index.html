@@ -34,7 +34,11 @@
         ::selection {
             background: rgba(0, 255, 255, 0.18);
             color: #ffffff;
-            text-shadow: none;
+        }
+
+        ::-moz-selection {
+            background: rgba(0, 255, 255, 0.18);
+            color: #ffffff;
         }
         /* HIDE SCROLLBAR */
 
@@ -772,8 +776,15 @@
                 }
         }
 
+/*
+        .tag {
 
-
+            padding: 4px 10px;
+            border-radius: 8px;
+            background: #2a2233;
+            color: #f5b3c7;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }*/
 
     </style>
 </head>
@@ -809,7 +820,7 @@
             </h2>
 
             <p>
-                Full Stack Developer with internship experience in ASP.NET Core,
+                Full Stack Developer with internship experience in <span class="tag">ASP.NET Core,</span>
                 Angular, and SQL Server. Passionate about building scalable
                 enterprise applications, REST APIs, dashboards, and responsive
                 frontend experiences with clean architecture and modern UI design.
@@ -954,9 +965,9 @@
                     <h3>Liquiloan Platform</h3>
 
                     <p>
-                        Full-stack lending platform with authentication,
-                        API integration, profile management,
-                        and responsive dashboard UI.
+                        This project was developed as my Final Year B.E. in Computer Engineering project. 
+                        It is a clone of my company’s existing Liquiloan platform, where I worked on building a full-stack lending application with secure authentication, API integration,
+                        profile management,and a responsive dashboard UI using Angular, .NET Core, SQL Server, and JWT.
                     </p>
 
                     <div class="badges">
@@ -1347,15 +1358,18 @@
 
     </section>
 
+
+
     <!-- FOOTER -->
 
     <footer>
-        © 2026 Nancy Patel • Full Stack Developer | ASP.NET • Angular • SQL Server
+        © 2026 Nancy Patel • Full Stack Developer | ASP.NET • Angular • SQL Server > 
     </footer>
 
     <div class="custom-cursor"></div>
 
     <script>
+
 
         document.addEventListener("DOMContentLoaded", () => {
 
